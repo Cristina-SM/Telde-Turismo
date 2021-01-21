@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Localizaciones</title>
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+
+  <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA37CBwkb6_X6IdvzbwyULbK-os4FxZ34A",
+    authDomain: "opinion-3b133.firebaseapp.com",
+    databaseURL: "https://opinion-3b133-default-rtdb.firebaseio.com",
+    projectId: "opinion-3b133",
+    storageBucket: "opinion-3b133.appspot.com",
+    messagingSenderId: "595240636551",
+    appId: "1:595240636551:web:c4cb22e4d99628ee90e822"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  </script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <!-- Poner este código en todos los html  -->
+  <link rel="stylesheet" 
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <link rel="icon" href="img/icon.ico" type="image/png">
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="CSS/style.css">
+  <!---->
+  <script src="js/components/opinion.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- barra de navegación -->
+    <a class="navbar-brand" href="index.html">¡Turistas en Telde!</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="vr.html">Descubre Telde</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="location.html">Más lugares</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="prices.html">Tarifas</a>
+        </li>
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Otros servicios.
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="gallery.html">Galería de imágenes</a>
+            <a class="dropdown-item" href="contact.html">¡Contacta con nosotros!</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="title-location">
+    <h1>Información </h1>
+  </div>
+  <!-- Tabla1 -->
+  <div class="container ">
+    <div class="title-location-2">
+      <h2>Puntos de interés</h2>
+    </div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Categoría</th>
+          <th>Información</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Naturaleza</td>
+          <td>Telde presentan muchos lugares para poder conectar con la naturaleza.</td>
+        </tr>
+        <tr>
+          <td>Gastronomía</td>
+          <td>Si usted desea probar sabores y olores nuevos, le interesará ir a nuestros puntos de gastronomía.</td>
+
+        </tr>
+        <tr>
+          <td><a>Patrimonio cultural</a></td>
+          <td>Desea ver casas, iglesias, calles y poder sumergirse en la belleza de estas. Le recomendamos ir a algunos
+            monumentos importante de telde.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container">
+    <div class="title-location-3">
+    <h2>Opiniones</h2>
+    </div>
+    <div class="col-sm-7">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Lugar</th>
+            <th>Opinión</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tbody-table-opinion">
+
+        </tbody>
+      </table>
+
+    </div>
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-4">
+      <form id="form-opinion">
+        <div class="form-group">
+          <label for="Name-user">Nombre de usuario</label>
+          <input type="text" class="form-control" name="NameUser" value="" id="Name-user">
+        </div>
+        <div class="form-group">
+          <label for="Place-user">Lugar</label>
+          <input type="text" class="form-control" name="PlaceUser" value="" id="Place-user">
+        </div>
+        <div class="form-group">
+          <label for="Opinion-user">Opinión</label>
+          <input type="text" class="form-control" name="OpinionUser" value="" id="Opinion-user">
+        </div>
+        <input type="submit" name="button-opinon" value="Enviar opinión" id="button-send-opinion">
+      </form>
+      
+    </div>
+  </div>
+
+  <div class="jumbotron footer"><br>
+    <div class="footer-letter">
+      <p><a href="contact.html">¡Contacta con nosotros!</a></p>
+      <p>Avisos legales y privacidad</p>
+    </div>
+  </div>
+
+</body>
+
+</html>

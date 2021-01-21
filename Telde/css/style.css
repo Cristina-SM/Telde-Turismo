@@ -1,0 +1,61 @@
+table { 
+    border:1px solid black ;
+    border-collapse: collapse;
+}
+
+table th, table td{
+    border: 2px  solid rgb(0, 0, 0) ;
+}
+
+
+.title_galery{
+    margin-bottom: 56px;
+    margin-top: 56px;
+    text-align: center;
+    
+    height: 100%;
+}
+
+.title-contact{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: auto;
+}
+
+.text-contact{
+    margin: auto;
+}
+
+.title-location{
+    text-align: center;
+    margin: 10px;
+}
+
+.row{
+    height: 50%;
+    text-align: center;
+}
+#tab {
+    position: absolute;
+    width: 130px;
+    height: 20px;
+    top: 35px;
+    left: 25px;
+    cursor: pointer;
+}
+.footer{
+    margin-top: 56px;
+    text-align:center;
+    color:rgba(10, 10, 10, 0.562); 
+}
+.footer-letter{
+    color: rgb(0, 0, 0);
+}
+.title-location-2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.imagen:hover{
+    filter: opacity(.5);
+}
