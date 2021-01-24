@@ -7,6 +7,35 @@ table th, table td{
     border: 2px  solid rgb(0, 0, 0) ;
 }
 
+#error-name{
+    display: none;
+    color: red;
+}
+#error-surname{
+    display: none;
+    color: red;
+}
+#error-email2{
+    display: none;
+    color: red;
+}
+#error-email3{
+    display: none;
+    color: red;
+}
+#error-email{
+    display: none;
+    color: red;
+}
+#error-language{
+    display: none;
+    color: red;
+}
+#error-validate{
+    display: none;
+    color: red;
+}
+
 
 .title_galery{
     margin-bottom: 56px;
