@@ -94,6 +94,5 @@ function pushContactData(formContact){
         Surname: formContact.Surname.value,
         Validate: formContact.Validate.value
     });
-    alert("¡Correo enviado! Le enviaremos un correo para que confirme sus datos.");
 }
 
