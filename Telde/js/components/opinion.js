@@ -1,12 +1,13 @@
-window.onload = inicializar;
+window.onload = inicialize;
 var formOpinions;
 var refOpinions;
 var tbodyTableOpinion;
 var refOpinionsedit;
-var create = "Añadr opinión";
+var create = "Añadir opinión";
 var update = "Modificar opinión";
 var mode = create;
-function inicializar(){
+
+function inicialize(){
   formOpinions = document.getElementById("form-opinion");
   formOpinions.addEventListener("submit", sendOpinionAFirebase, false);
 
@@ -28,12 +29,12 @@ function showOpinionFirebase(){
       "<td>" + data[key].OpinionUser + "</td>"+
       '<td>' +
       '<button class="btn btn-default edit" data-opinion="' + key + '">' +
-      '<span class="	glyphicon glyphicon-refresh"></span>' +
+      '<i class="fas fa-pen-alt"></i>'+
       '</button>' +
       '</td>' +
       '<td>' +
       '<button class="btn btn-danger delete" data-opinion="' + key + '">' +
-      '<span class="	glyphicon glyphicon-remove-sign"></span>' +
+      '<i class="far fa-trash-alt"></i>' +
       '</button>' +
       '</td>'+
       "</tr>";
