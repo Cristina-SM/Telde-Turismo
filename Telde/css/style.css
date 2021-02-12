@@ -84,7 +84,34 @@ table th, table td{
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
-.imagen:hover{
-    filter: opacity(.5);
+.img-thumbmail{
+    margin: 15px !important;
+}
+#login{
+    display: block;
+}
+#logup{
+    display: block;
+}
+#logout{
+    display: none;
+}
+.edit{
+    display: none;
+}
+.delete{
+    display: none;
+}
+#form-opinion{
+    display: none;
+}
+#form-text{
+    display: block;
+}
+#alert{
+    color: red;
+    display: block;
+}
+#file{
+    display: none ;
 }

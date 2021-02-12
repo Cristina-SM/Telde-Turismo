@@ -45,3 +45,13 @@
 .footer-letter{
     color: rgb(0, 0, 0);
 }
+
+#login{
+    display: block;
+}
+#logup{
+    display: block;
+}
+#logout{
+    display: none;
+}
