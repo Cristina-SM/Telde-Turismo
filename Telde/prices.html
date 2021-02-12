@@ -15,20 +15,34 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+  integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
   <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <nav class="navbar navbar navbar-inverse bg-dark navbar-dark sticky-top">
     <!-- barra de navegación -->
     <a class="navbar-brand" href="index.html">¡Turistas en Telde!</a>
-
+    <div class="navbar ml-auto sticky-top">
+      <button class="navbar-toggler" type="button" id="login" data-toggle="modal" data-target="#signinmodal">
+        <i class="fas fa-sign-in-alt"></i>
+      </button>
+      <button class="navbar-toggler" type="button" id="logup" data-toggle="modal" data-target="#signupmodal">
+        <i class="fas fa-user-plus"></i>
+      </button>
+      <button class="navbar-toggler" type="button" id="logout" data-toggle="modal" data-target="#">
+        <i class="fas fa-sign-out-alt"></i>
+      </button>
+    </div>
     <!-- Toggler/collapsibe Button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
+    <div class = "navbar sticky-top" id="button_nav">
+      <button class="navbar-toggler" type="button" id="toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
     <!-- links -->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
@@ -133,6 +147,7 @@
     <div class="footer-letter">
       <p><a href="contact.html">¡Contacta con nosotros!</a></p>
       <p>Avisos legales y privacidad</p>
+       <a class="nav-link" href="RSS.xml"><i class="fa fa-rss" aria-hidden="true"></i></a>
     </div>
   </div>
   
