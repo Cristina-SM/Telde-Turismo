@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Account</title>
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDTX88AVYsroJlyeRdyimLUTT0yyYyatec",
+      authDomain: "conoce-telde.firebaseapp.com",
+      databaseURL: "https://conoce-telde.firebaseio.com",
+      projectId: "conoce-telde",
+      storageBucket: "conoce-telde.appspot.com",
+      messagingSenderId: "735281098040",
+      appId: "1:735281098040:web:e9f68e5137621c76d0a5cd"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+  <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <!-- Poner este código en todos los html  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <link rel="icon" href="img/icon.ico" type="image/png">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../css/account.css">
+  <script src="../js/account.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+  <div class="back"></div>
+  <nav class="navbar-expand">
+    <a class="navbar-brand " href="../index.html">Inicio</a>
+    <a class="navbar-brand" href="/html/vr.html">Telde VR</a>
+    <a class="navbar-brand" href="/html/location.html">Lugares</a>
+    <a class="navbar-brand" href="/html/gallery.html">Galería</a>
+    <a class="navbar-brand" href="/html/account.html">Cuenta</a>
+  </nav>
+
+  <div class="modal-dialog text-center ">
+    <div class="col-sm-8 main-section">
+      <div class="modal-content">
+        <div class="col-12 user-img">
+          <img id="avatar" src="../img/account/avatar.png" alt="avatar" />
+        </div>
+        <form id="option" class="col-12 hidden">
+          <button type="button" id="option1" class="btn btn-primary"><i class="fas fa-user-plus"></i>
+            Registrarse</button>
+          <button type="button" id="option2" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Iniciar
+            sesión</button>
+        </form>
+        <!-- sign on -->
+        <form id="form-account" class="col-12 hidden" method="get">
+          <div class="form-group" id="email-create">
+            <input id="email-new" type="email" class="form-control" placeholder="Email" name="email" />
+          </div>
+          <div class="form-group" id="password-create">
+            <input id="password-new" type="password" class="form-control" placeholder="Contrasena" name="password" />
+          </div>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Registrarse </button>
+        </form>
+        <!-- sign in -->
+        <form id="form-auth" class="col-12 hidden" method="get">
+          <div class="form-group" id="user-group">
+            <input type="email" class="form-control" placeholder="Email" name="email" />
+          </div>
+          <div class="form-group" id="contrasena-group">
+            <input type="password" class="form-control" placeholder="Contrasena" name="password" />
+          </div>
+          <button id="old" type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Iniciar sesión
+          </button>
+        </form>
+        <div class="col-12 hidden" id="logout">
+          <button id="exit" type="submit" class="btn btn-primary"><i class="far fa-times-circle"></i> Salir </button>
+        </div>
+        <div class="alert alert-danger hidden" id="problem" role="alert">
+          Correo y contraseña incorrectas.
+        </div>
+        <div class="alert alert-success hidden" id="correct" role="alert">
+          Se inicio correctamente.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer col-12"><br>
+    <div class="footer-letter">
+      <p><a href="/html/contact.html">¡Contacta con nosotros!</a></p>
+      <p>Avisos legales y privacidad</p>
+      <a class="nav-link" href="../XML-XSD/RSS.xml"><i class="fa fa-rss" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</body>
+
+</html>

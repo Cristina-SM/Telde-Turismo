@@ -1,57 +1,151 @@
-#myScrollspy{
-    position: relative;
-}
-.carousel{
-	background: #19647E;
-}
-
-.carousel-inner{
-	height: 500px;
+.carousel {
+    margin-top: 10px;
+    margin-bottom: 70px;
+    background-color: #ffffffbd;;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-.carousel-item{
-	height: 100%;
-	text-align: center;
+.carousel-inner {
+    height: 500px;
 }
 
-.photoCarousel{
+.carousel-item {
+    height: 100%;
+    text-align: center;
+}
+
+.photoCarousel {
     height: 100%;
 }
 
-.title_conocestelde{
-    border: 1px  solid black;
+.title-telde {
     text-align: center;
     height: 100%;
+    position: relative;
+    background-color: #ffffff63;
+    margin-top: 100px;
 }
-.sticky-top-2{
-    position: sticky;
-    top: 56px;
-    margin-top: 56px;
-}
-.bg-first{
+
+.bg-first {
     background-color: rgba(255, 166, 0, 0.445);
     color: #000000;
     height: 300px;
 }
-.title_scrollspy{
+
+.title_scrollspy {
     text-align: center;
 }
 
-.footer{
-    margin-top: 56px;
-    text-align:center;
-    color:rgba(10, 10, 10, 0.562); 
+.footer {
+    background-color: #ffffffbd;
+    position: relative;
+    top:83%;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 8%;
 }
-.footer-letter{
+
+.footer-letter {
     color: rgb(0, 0, 0);
 }
 
-#login{
-    display: block;
+
+.title {
+    top: auto;
+    margin-top: auto;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 10px;
 }
-#logup{
-    display: block;
+
+.text {
+    padding: 20px;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 35px;
+    background: rgba(253, 253, 253, 0.39);
 }
-#logout{
+
+.place {
+    position: relative;
+    background-color: #96cf61ce;
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+.beach {
+    position: relative;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #fae56cd2;
+}
+
+.shopping {
+    position: relative;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #6da0fdce;
+}
+
+.gastronomy {
+    position: relative;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #f89486ce;
+}
+
+.space {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #00000000;
+}
+/* space has a transparent style so yo can`t see that*/
+
+
+.navbarleft {
+    padding-left: 70px;
+}
+
+.navbarleft {
+    background-color: #000000;
+    position: fixed;
+}
+
+.imagen:hover {filter: grayscale(80%);}
+
+.hidden {
     display: none;
 }
+@import url('https://fonts.googleapis.com/css?family=Oswald:500');
+.back {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://aws.traveler.es/prod/designs/v1/assets/1800x1196/122823.jpg) no-repeat center #efeff1;
+    background-size: cover;
+}
+
+nav {
+    width: 100%;
+    position: relative;
+    top: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 0px;
+
+}
+
+a{
+    position: relative;
+    display: inline-block;
+}
+

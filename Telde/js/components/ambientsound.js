@@ -12,11 +12,11 @@ function toggleSound(event){
     
     if(sounding == "true"){
       mySky.setAttribute("sounding", false);
-      speakerImg.src = "img/sound_off.png";
+      speakerImg.src = "../img/sound_off.png";
       mySky.components.sound.stopSound();
     } else {
       mySky.setAttribute("sounding", true);
-      speakerImg.src = "img/sound_on.png";
+      speakerImg.src = "../img/sound_on.png";
       mySky.components.sound.playSound();
     }
   }

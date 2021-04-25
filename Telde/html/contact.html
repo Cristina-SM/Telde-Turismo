@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDTX88AVYsroJlyeRdyimLUTT0yyYyatec",
+      authDomain: "conoce-telde.firebaseapp.com",
+      databaseURL: "https://conoce-telde.firebaseio.com",
+      projectId: "conoce-telde",
+      storageBucket: "conoce-telde.appspot.com",
+      messagingSenderId: "735281098040",
+      appId: "1:735281098040:web:e9f68e5137621c76d0a5cd"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+    <link rel="icon" href="../img/icon.ico" type="image/png">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="../js/form.js"></script>
+  <link rel="stylesheet" href="../css/contact.css">
+</head>
+
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+  <div class="back"></div>
+  <nav class="navbar-expand">
+    <a class="navbar-brand " href="../index.html">Inicio</a>
+    <a class="navbar-brand" href="/html/vr.html">Telde VR</a>
+    <a class="navbar-brand" href="/html/location.html">Lugares</a>
+    <a class="navbar-brand" href="/html/gallery.html">Galería</a>
+    <a class="navbar-brand" href="/html/account.html">Cuenta</a>
+  </nav>
+
+  <div class="container">
+    <div class="title-contact">
+      <h1>Contacto</h1>
+    </div>
+    <div class="text-contact">
+      <p>Si quieres más información sobre la guía turística, rellena el siguiente formulario.</p>
+    </div>
+    <div id = "contact" class="col-md-4 m-auto">
+      <form id="form-contact">
+
+        <div class="form-group">
+          <label id="email" class="mr-sm-2">Email:</label>
+          <input type="email" name="Email" class="form-control mb-2 mr-sm-2" placeholder="Introduce el email"
+            id="Email">
+          <div id="error-email">*Email no valido</div>
+        </div>
+
+        <div class="form-group">
+          <label id="email2" class="mr-sm-2">Confirmación email:</label>
+          <input type="email" name="Email2" class="form-control mb-2 mr-sm-2" placeholder="Introduce el email"
+            id="Email2">
+          <div id="error-email2">*Email no valido</div>
+          <div id="error-email3">*El email no coinciden</div>
+        </div>
+
+        <div class="form-group">
+          <label id="name" class="mr-sm-2"> Nombre: </label>
+          <input type="text" name="Name" class="form-control mb-2 mr-sm-2" placeholder="Introduce el nombre" id="Name">
+          <div id="error-name">*El campo de nombre es obligatorio</div>
+        </div>
+
+        <div class="form-group">
+          <label id="surname" class="mr-sm-2"> Apellido: </label>
+          <input type="text" name="Surname" class="form-control mb-2 mr-sm-2" placeholder="Introduce el apellido"
+            id="Surname">
+          <div id="error-surname">*El campo de apellido es obligatorio</div>
+        </div>
+
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" name="Language" class="form-check-input"> Español
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input type="radio" name="Language" class="form-check-input">Otro
+        </div>
+
+        <div id="error-language">*El campo de idioma es obligatorio</div>
+
+        <div class="form-group">
+          <label for="Validate">Verificación:</label>
+          <input type="text" name="Validate" class="form-control mb-2 mr-sm-2" id="Validate">
+        </div>
+        <div class="form-group">
+          <label for="Validate">Introduce 1234 para confirmar.</label>
+        </div>
+        <div id="error-validate">*El campo de validate no está correcto</div>
+
+        <button type="submit" class="btn btn-primary mb-2" name="button-contact"
+          id="button-send-contact">Enviar</button>
+        <button type="reset" class="btn btn-primary mb-2" name="button-delete">Resetear</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer col-12"><br>
+    <div class="footer-letter">
+      <p><a href="/html/contact.html">¡Contacta con nosotros!</a></p>
+      <p>Avisos legales y privacidad</p>
+      <a class="nav-link" href="../XML-XSD/RSS.xml"><i class="fa fa-rss" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</body>
+
+</html>

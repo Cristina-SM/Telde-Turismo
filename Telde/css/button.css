@@ -7,6 +7,18 @@
     text-align: center;
     z-index: 1;
 }
+.button-exit{
+    position: fixed;
+    top: 2em;
+    left: 4em;
+    width: 3em;
+    text-align: center;
+    z-index: 1;
+}
+#back{
+    border-radius: 10px;
+
+}
 #speaker-button{
     border-radius: 5px;
 }

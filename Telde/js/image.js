@@ -2,29 +2,63 @@ window.onload = inicializar;
 var fichero;
 var databaseRef;
 var storageRef;
-var formauth;
-var formaccount;
-var formexit;
+var imagenASubir;
+var imagennombre;
+var refImagedelete;
+var refImageedit;
+var update = "Modificar imagen";
 
-function inicializar() {
-  fichero = document.getElementById("myfile");
-  fichero.addEventListener("change", sendImageFirebase, false);
-
+var user = firebase.auth().currentUser;
+function inicializar(event) {
   storageRef = firebase.storage().ref();
   databaseRef = firebase.database().ref().child("Image");
   showImagesFirebase();
-
-  formauth = document.getElementById("form-auth");
-  formauth.addEventListener("submit", authentication, false);
- 
-  formaccount = document.getElementById("form-account");
-  formaccount.addEventListener("submit", sendAccount, false);
-
-  formexit = document.getElementById("logout");
-  formexit.addEventListener("click", exit, false);
-
+  fichero = document.getElementById("img");
+  button = document.getElementById("form-file")
+  button.addEventListener("submit", sendImageFirebase, false);
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      document.getElementById("alert").style.display = "none";
+      document.getElementById("archivos").style.display = "block";
+      if(user.email == "admin@admin.com"){
+        showImagesFirebaseAdmin();
+      }
+    } else {
+      document.getElementById("alert").style.display = "block";
+    }
+  });
 }
 
+function showImagesFirebaseAdmin(event) {
+  databaseRef.on("value", function (snapshot) {
+    var data = snapshot.val();
+    var result = "";
+    for (var key in data) {
+      result += '<img width = "200" class = "img-thumbmail" src ="' + data[key].url + '"/>'+
+        // '<td class = "edit">' +
+        // '<button class="btn btn-default editB" imagen ="' + key + '">' +
+        // '<i class="fas fa-pen-alt"></i>' +
+        // '</button>' +
+        // '</td>' +
+        '<td class = "delete">' +
+        '<button class="btn btn-danger deleteB" imagen="' + key + '">' +
+        '<i class="far fa-trash-alt"></i>' +
+        '</button>' +
+        '</td>';
+    }
+    document.getElementById("image-firebase").innerHTML = result;
+    if (result != "") {
+      var elementedit = document.getElementsByClassName("editB");
+      for (var i = 0; i < elementedit.length; i++) {
+        elementedit[i].addEventListener("click", editImageFirebase, false);
+      }
+      var elementdelete = document.getElementsByClassName("deleteB");
+      for (var i = 0; i < elementdelete.length; i++) {
+        elementdelete[i].addEventListener("click", deleteImageFirebase, false);
+      }
+    }
+  });
+}
 function showImagesFirebase() {
   databaseRef.on("value", function (snapshot) {
     var data = snapshot.val();
@@ -36,86 +70,76 @@ function showImagesFirebase() {
   });
 }
 
-function sendImageFirebase() {
+function sendImageFirebase(event) {
+  event.preventDefault();
+  console.log("send")
   var imagenASubir = fichero.files[0];
   var imagennombre = imagenASubir.name;
   var uploadTask = storageRef.child('Opinion/' + imagennombre).put(imagenASubir);
-
+  document.getElementById("bar").style.display = "block";
   uploadTask.on('state_changed',
     function (snapshot) {
     }, function (error) {
       console.log(error);
     }, function () {
-      uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+      uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
         console.log('File available at', downloadURL);
+        document.getElementById("bar").style.display = "none";
         createNodo(imagennombre, downloadURL);
+        console.log("finish");
       });
     });
 }
 
 function createNodo(imagennombre, downloadURL) {
-  console.log(imagennombre);
-  console.log(downloadURL);
   databaseRef.push({
     nombre: imagennombre,
     url: downloadURL
   });
 }
 
-function authentication(event) {
+
+function deleteImageFirebase(event) {
   event.preventDefault();
-  var user = event.target.email.value;
-  var password = event.target.password.value;
+  databaseRef.on("value", function (snapshot) {
+  var data = snapshot.val();
+    var result = "";
+    for (var key in data) {
+      result += '<img width = "200" class = "img-thumbmail" src ="' + data[key].url + '"/>' +
+      // '<td class = "edit">' +
+      // '<button class="btn btn-default editB" imagen ="' + key + '">' +
+      // '<i class="fas fa-pen-alt"></i>' +
+      // '</button>' +
+      // '</td>' +
+      '<td class = "delete">' +
+      '<button class="btn btn-danger deleteB" imagen="' + key + '">' +
+      '<i class="far fa-trash-alt"></i>' +
+      '</button>' +
+      '</td>'+
+      storageRef.child('Opinion/'+ data[key].nombre);
 
-  firebase.auth().signInWithEmailAndPassword(user, password)
-    .then(function (result) {
-      console.log("Sign in"); 
-      document.getElementById("logout").style.display = "block";
-      document.getElementById("login").style.display = "none";
-      document.getElementById("logup").style.display = "none";
-      document.getElementById("alert").style.display = "none";
-      document.getElementById("file").style.display = "block";
-    })
-    .catch(function (error) {
-      alert("Los datos introducidos no son correctos.");
-    });
-}
+    }
+    document.getElementById("image-firebase").innerHTML = result;
+    storageRef.remove();
+  })
+  var keyImagedelete = this.getAttribute("imagen");
+  var refImagedelete = databaseRef.child(keyImagedelete);
+  refImagedelete.remove();
+};
 
-function sendAccount(event) {
-  event.preventDefault();
-  var emailaccount = document.getElementById("email-account").value;
-  var passwordaccount = document.getElementById("password-account").value;
+  
 
-  firebase.auth().createUserWithEmailAndPassword(emailaccount, passwordaccount)
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
-      alert("Se ha producido un error", errorMessage);
-    })
-    .then((user) => {
-      console.log("sign up");
-      document.getElementById("logout").style.display = "block";
-      document.getElementById("login").style.display = "none";
-      document.getElementById("logup").style.display = "none";
-    });
-}
 
-function exit(event) {
-  event.preventDefault();
-  firebase.auth().signOut().then(() => {
-    console.log("sign out");
-    document.getElementById("logout").style.display = "none";
-    document.getElementById("login").style.display = "block";
-    document.getElementById("logup").style.display = "block";
-    document.getElementById("alert").style.display = "block";
-    document.getElementById("file").style.display = "none";
-  }).catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(errorCode);
-    console.log(errorMessage);
-    alert("Se ha producido un error", errorMessage);
-  });
-}
+
+// function editImageFirebase(event) {
+//   event.preventDefault();
+//   console.log("edit")
+//   var keyImageedit = this.getAttribute("imagen-edit");
+//   refImageedit = databaseRef.child(Imagen);
+//   refImageedit.once("value", function (snap) {
+//     var dataedit = snap.val();
+//     document.getElementById("Image").value = dataedit.url;
+//   });
+//   document.getElementById("send-file").value = update;
+//   mode = update;
+// }

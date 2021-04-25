@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería</title>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDTX88AVYsroJlyeRdyimLUTT0yyYyatec",
+      authDomain: "conoce-telde.firebaseapp.com",
+      databaseURL: "https://conoce-telde.firebaseio.com",
+      projectId: "conoce-telde",
+      storageBucket: "conoce-telde.appspot.com",
+      messagingSenderId: "735281098040",
+      appId: "1:735281098040:web:e9f68e5137621c76d0a5cd"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+  <!-- Poner este código en todos los html  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <link rel="icon" href="../img/icon.ico" type="image/png">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../css/gallery.css">
+  <!---->
+
+
+
+  <script src="../js/image.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+  <div class="back"></div>
+  <nav class="navbar-expand">
+    <a class="navbar-brand " href="../index.html">Inicio</a>
+    <a class="navbar-brand" href="/html/vr.html">Telde VR</a>
+    <a class="navbar-brand" href="/html/location.html">Lugares</a>
+    <a class="navbar-brand" href="/html/gallery.html">Galería</a>
+    <a class="navbar-brand" href="/html/account.html">Cuenta</a>
+  </nav>
+
+
+  <div class="title_galery col-12">
+    <h1>Las aventuras de nuestros clientes</h1>
+  </div>
+  <div class="text col-12">
+    <div class="text-body">
+      <h3>Aquí puedes publicar las imágenes que has sacado de los lugares visitados en Telde.
+      </h3>
+    </div>
+    <div id="alert">
+      <p>
+        Es necesario iniciar sesion en la página web.
+      </p>
+    </div>
+    <div id="send-img" class="col-sm-12">
+      <div id="archivos" class="form-group hidden">
+        <form id="form-file">
+          <input type="file" class="custom-file-input" id="img" accept=".jpg, .jpeg, .png, .svg, .webm">
+          <label class="custom-file-label" id = "files" >Seleciona la imagen</label><br><br>
+          <div id = "bar" class="wrapper hidden">
+            <div class="progressbar">
+              <div class="stylization"></div>
+            </div>
+          </div>
+          <button type="submit" class="button-send" name="button-contact"
+          id="button-send">Enviar</button>
+        </form>
+         
+      </div>
+      <div class="row">
+        <div class="col-sm-12" id="image-firebase">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="footer col-12"><br>
+    <div class="footer-letter">
+      <p><a href="/html/contact.html">¡Contacta con nosotros!</a></p>
+      <p>Avisos legales y privacidad</p>
+      <a class="nav-link" href="../XML-XSD/RSS.xml"><i class="fa fa-rss" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</body>
+
+</html>

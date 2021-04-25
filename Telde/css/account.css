@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:500');
+
+.back {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://aws.traveler.es/prod/designs/v1/assets/1800x1196/122823.jpg) no-repeat center #efeff1;
+    background-size: cover;
+}
+
+nav {
+    position: relative;
+    top: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    width: 100%;
+    height: 100%;
+
+}
+
+.footer {
+    background-color: #ffffffbd;
+    position: relative;
+    /* top: 75%; */
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.footer-letter {
+    color: rgb(0, 0, 0);
+}
+
+.hidden{
+    display: none;
+}
+.show{
+    display: block;
+}
+
+.main-section{
+    margin:0 auto;
+    margin-top:150px;
+    padding: 0;
+}
+
+.modal-content{
+    background-color: #3b4652;
+    opacity: .95;
+    padding: 0 20px;
+    box-shadow: 0px 0px 3px #848484;
+}
+.user-img{
+    margin-top: -50px;
+    margin-bottom: 35px;
+    
+}
+
+.user-img img{
+    width: 100px;
+    height: 100px;
+    box-shadow: 0px 0px 3px #848484;
+    border-radius: 50%;
+    background-color: #efeff1;
+}
+
+.form-group input{
+    height: 42px;
+    font-size: 18px;
+    border:0;
+    padding-left: 54px;
+    border-radius: 5px;
+}
+
+.form-group::before{
+    font-family: "Font Awesome\ 5 Free";
+    position: absolute;
+    left: 28px;
+    font-size: 22px;
+    padding-top:4px;
+}
+
+.form-group#user-group::before{
+    content: "\f007";
+}
+.form-group#email-create::before{
+    content: "\f007";
+}
+
+.form-group#contrasena-group::before{
+    content: "\f023";
+}
+.form-group#password-create::before{
+    content: "\f023";
+}
+
+button{
+    width: 60%;
+    margin: 5px 0 25px;
+}
+
+.forgot{
+    padding: 5px 0;
+}
+
+.forgot a{
+    color: white;
+}
+.form-group::before{
+    font-family: "Font Awesome\ 5 Free";
+    position: absolute;
+    left: 28px;
+    font-size: 22px;
+    padding-top:4px;
+}
+
+.form-group#create-group::before{
+    content: "\f007";
+}
+
+.form-group#password-group::before{
+    content: "\f023";
+}
